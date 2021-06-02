@@ -26,6 +26,8 @@ The deep learning-based approach includes developing a multitasking model based 
 Different architectures based on different combination of inputs are being developed as part of the work. The detail of input-output combinations and the corresponding architecture is given in the figure below:
 ![image](https://user-images.githubusercontent.com/63348709/120197134-48cbaa80-c23e-11eb-94b8-c2ef57776b92.png)
 
+The central architecture developed here is CONF-D, which takes respiration signals from three modalities and gives the final respiratory rate and respiratory signal. The respiratory signal output from the model can generate the instantaneous breathing peaks, which gives an instantaneous breathing rate. Other architecture was developed to thoroughly analyze the multitasking network's accuracy against the different sets of inputs.
+
 # FILE DESCRIPTION OF DEEP LEARNING-BASED METHOD
      data_extraction.py - This file extract the data from the each subjects of PPG Dalia Dataset and store them into the dictionary in the windows of 32 sec.
                            The ECG signal, accelerometer signal, Reference Respiratory waveform, Rpeak locations and amplitude are extracted for each subject.
@@ -37,4 +39,6 @@ Different architectures based on different combination of inputs are being devel
      testbench4.py - This file trains the model after framing the torch dataframes.
      DL_eval.ipynb -  This file is for evaluation purpose.
 
+# RESULTS
+Evaluation of the multitasking model is done in terms of Absolute Error. The algorithm is evaluated against the individual modalities, and its performance is also evaluated during different activities. Box plots of the corresponding analysis are presented in the results section, which shows the algorithm's accuracy in estimating respiration rate during ambulatory activities.
 
